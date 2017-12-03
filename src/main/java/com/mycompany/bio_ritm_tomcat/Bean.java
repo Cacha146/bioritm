@@ -31,15 +31,15 @@ import org.primefaces.model.chart.LineChartSeries;
 
 public class Bean implements Serializable {
 
-    private String user_string;
+    private Date user_date;
     private List<Ritm> list_ritms = new ArrayList();
 
-    public String getUserDate() {
-        return user_string;
+    public Date getUserDate() {
+        return user_date;
     }
 
-    public void setUserDate(String date) {
-        this.user_string = date;
+    public void setUserDate(Date date) {
+        this.user_date = date;
     }
 
     private int count_days_bettwen_dates(Date date1, Date date2) {
@@ -51,8 +51,6 @@ public class Bean implements Serializable {
     public void calculateBioRitms() throws ParseException {
         Date now = Calendar.getInstance().getTime();
         now.setTime(now.getTime() - (long) (10 * 24 * 60 * 60 * 1000));
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-        Date user_date = format.parse(user_string);
         int days = count_days_bettwen_dates(user_date, now) - 10;
         for (int i = 0; i < 21; i++) {
 
