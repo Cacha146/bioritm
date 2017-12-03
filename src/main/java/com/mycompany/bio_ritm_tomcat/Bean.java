@@ -58,7 +58,7 @@ public class Bean implements Serializable {
             ritm.setPhysical((Math.sin(2 * Math.PI * days / 23)) * 100);
             ritm.setEmotional((Math.sin(2 * Math.PI * days / 28)) * 100);
             ritm.setIntellectual((Math.sin(2 * Math.PI * days / 33)) * 100);
-            ritm.setDate("" + now.getDate() + "." + now.getMonth());
+            ritm.setDate("" + now.getDate() + "." + (now.getMonth()+1));
             days++;
             now.setTime(now.getTime() + (long) (24 * 60 * 60 * 1000));
             list_ritms.add(ritm);
